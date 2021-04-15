@@ -7,13 +7,27 @@ repositories {
 }
 
 def selenideVersion = "5.20.1",
-    junitVersion = "5.7.1"
+    junitVersion = "5.7.1",
+    poiVersion = "5.0.0",
+    pdfTestVersion = "1.5.1",
+    xlsTestVersion = "1.4.3",
+    lingalaZipVersion = "2.7.0",
+    hamcrestVersion = "1.3"
 
-dependencies {
+    dependencies
+{
     testImplementation(
             "com.codeborne:selenide:$selenideVersion",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
-            "org.hamcrest:hamcrest-all:1:3")
+            "com.codeborne:pdf-test:$pdfTestVersion",
+            "com.codeborne:xls-test:$xlsTestVersion",
+            "net.lingala.zip4j:zip4j:$lingalaZipVersion",
+            "org.hamcrest:hamcrest-all:$hamcrestVersion",
+            "org.apache.poi:poi-ooxml:$poiVersion",
+            "org.apache.poi:poi:$poiVersion",
+            "org.apache.poi:poi-scratchpad:$poiVersion",
+            "org.apache.poi:poi-ooxml-full:$poiVersion"
+    )
 
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
 }
