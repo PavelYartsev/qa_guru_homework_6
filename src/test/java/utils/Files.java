@@ -95,7 +95,6 @@ public class Files {
             HWPFDocument doc = new HWPFDocument(fis);
             WordExtractor extractor = new WordExtractor(doc);
             result = extractor.getText();
-            System.out.println(result);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -109,11 +108,9 @@ public class Files {
             XWPFDocument doc = new XWPFDocument(fis);
             XWPFWordExtractor extractor = new XWPFWordExtractor(doc);
             result = extractor.getText();
-            System.out.println(result);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return result;
     }
-
 }
