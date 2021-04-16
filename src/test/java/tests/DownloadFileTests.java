@@ -2,7 +2,6 @@ package tests;
 
 import com.codeborne.pdftest.PDF;
 import com.codeborne.xlstest.XLS;
-import net.lingala.zip4j.exception.ZipException;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -82,7 +81,7 @@ public class DownloadFileTests extends TestBase {
     }
 
     @Test
-    void zipFilePasswordTest() throws IOException, ZipException {
+    void zipFilePasswordTest() throws IOException {
         unzip(zipFilePasswordPath, unzipFolderPath, zipPassword);
 
         String actualData = readTextFromPath(unzipTxtFilePath);
