@@ -8,9 +8,10 @@ import org.junit.jupiter.api.BeforeAll;
 import java.io.File;
 import java.io.IOException;
 
+import static data.TestData.defaulfDownloadFolderPath;
+import static data.TestData.downloadFolderPath;
+
 public class TestBase {
-    private static final String defaulfDownloadFolderPath = "build/downloads";
-    private static String downloadFolderPath = "downloadsForTests";
 
     @BeforeAll
     static void setup() {
@@ -20,7 +21,9 @@ public class TestBase {
 
     @AfterEach
     void deleteFiles() throws IOException {
-        FileUtils.deleteDirectory(new File(downloadFolderPath));
-        FileUtils.deleteDirectory(new File(defaulfDownloadFolderPath));
+        if (Configuration.downloadsFolder != null)
+            FileUtils.deleteDirectory(new File(downloadFolderPath));
+        else
+            FileUtils.deleteDirectory(new File(defaulfDownloadFolderPath));
     }
 }
